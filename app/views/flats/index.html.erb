@@ -1,13 +1,25 @@
 <h1>All Flats</h1>
-<% @flats.each do |flat|%>
-<p>
-    <ul>
-       <li>Name: <%= flat.name %></li>
-       <li>Address <%= flat.address %></li>
-       <li>Description <%= flat.description %></li>
-       <li><i class="fas fa-users"></i> Guests <%= flat.number_of_guests %></li>
-       <li><i class="fas fa-dollar-sign"></i> <%= flat.price_per_night %></li>
-    </ul>
-</p>
-<% end %>
+
+<div class="container">
+
+    <% @flats.each do |flat|%>
+
+      <div class="p-2 m-2 border">
+
+        <div>
+          <p>Name: <%= link_to flat.name, flat_path(flat) %></p>
+          <p>Address <%= flat.address %></li>
+        </div>
+
+        <div>
+          <%= image_tag "https://picsum.photos/400/300?random=#{flat.id}" %>
+        </div>
+
+      </div>
+
+    <% end %>
+
+</div>
+
+
 
